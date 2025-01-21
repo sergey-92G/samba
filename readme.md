@@ -15,6 +15,19 @@ Docker container of [Samba](https://www.samba.org/), an implementation of the Wi
 
 ## Usage  🐳
 
+
+
+Создаем папку добавляем в кофиг и composer.yml, эти 2 файла закидываем в папку 
+cd /root/samba/
+ docker compose up -d
+
+
+
+
+
+
+
+
 Via Docker Compose:
 
 ```yaml
