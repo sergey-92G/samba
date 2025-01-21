@@ -14,23 +14,23 @@
 #     volumes:
 #       - /home/example:/storage
 
-version: '3'
 services:
-  samba:
-    image: dockurr/samba
-    container_name: samba_server
-    restart: always
-    # Пробрасываем порты только на IP 10.8.0.1,
-    # чтобы никто извне не мог подключиться по другим интерфейсам
-    ports:
-      - "10.8.0.1:139:139"
-      - "10.8.0.1:445:445"
-    environment:
-      - USER=admin
-      - PASS=HZavjFeAx78qE4I
-      - SHARE=fileshare
-    volumes:
-      # Расшариваем вашу локальную папку /root/share_files в /mount/fileshare внутри контейнера
-      - /root/share_files:/mount/fileshare
-      # Подменяем штатный smb.conf нашим
-      - ./smb.conf:/etc/samba/smb.conf
+    samba:
+        image: dockurr/samba
+        container_name: samba_server
+        restart: always
+        # Пробрасываем порты только на IP 10.8.0.1,
+        # чтобы никто извне не мог подключиться по другим интерфейсам
+        
+        environment:
+        - USER: "admin"
+        - PASS: "HZavjFeAx78qE4I"
+        - name= "share_file"
+        ports:
+        - "10.8.0.1:139:139"
+        - "10.8.0.1:445:445"
+        volumes:
+        # Расшариваем вашу локальную папку /root/share_files в /mount/fileshare внутри контейнера
+        - /root/share_files:/mount/fileshare
+        # Подменяем штатный smb.conf нашим
+        - ./smb.conf:/etc/samba/smb.conf
