@@ -24,7 +24,7 @@ services:
         
         environment:
         - USER: "admin"
-        - PASS: "HZavjFeAx78qE4I"
+        - PASS: "HZavjFesa3Ax78qE4I"
         - name= "share_file"
         ports:
         - "10.8.0.1:139:139"
